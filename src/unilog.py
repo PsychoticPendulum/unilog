@@ -9,7 +9,7 @@ import os
 import sys
 from datetime import datetime
 try:
-    from ANSI import *
+    from ansi import *
 except:
     print("ERROR:   Missing library:    ANSI")
     exit(1)
@@ -76,8 +76,3 @@ def Log(lvl,txt,stdout_only=False):
     if lvl == LVL.INFO: pass
     if lvl == LVL.WARN: input("Press any key to continue ...")
     if lvl == LVL.FAIL: exit(1)
-
-
-Log(LVL.INFO, "Hello, World")
-Log(LVL.WARN, "Hello, World")
-Log(LVL.FAIL, "Hello, World")
