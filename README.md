@@ -6,6 +6,17 @@ Current version is 1.3.7
 ## Usage
 `from unilog import *`
 
+You should set where the logfiles are written
+
+`LOG.path = "/path/to/dir/"`
+
+`LOG.file = "<filename>.log"`
+
+You can also disable writing to file with
+
+`LOG.writeToFile = False`
+
+
 There are 3 levels
 
 **INFO** A green box saying [ OK ] before the log.
