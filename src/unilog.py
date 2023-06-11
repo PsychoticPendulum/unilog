@@ -44,13 +44,13 @@ def WriteToScreen(msg):
 def WriteToFile(msg,lvl):
     if not LOG.writeToFile: return
     if len(LOG.path) == 0:
-        LOG.path = os.getcwd()
+        LOG.path = f"{os.getcwd()}/"
         Log(LVL.WARN, f"No path set, using default path {UTIL.UNDERLINE}{os.getcwd()}{UTIL.RESET}",stdout_only=True)
 
     timestamp = datetime.now().isoformat()
     try:
        file = open(f"{LOG.path}{LOG.file}","a")
-       file.write(f"[{timestamp}] -> {lvl}\t{msg}")
+       file.write(f"[{timestamp}] -> {lvl}\t{msg}\n")
        file.close()
     except PermissionError:
         Log(LVL.WARN, f"Insufficient permissions to write to file: {UTIL.UNDERLINE}{LOG.file}{UTIL.RESET}",stdout_only=True)
