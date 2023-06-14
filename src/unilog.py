@@ -26,11 +26,11 @@ class LVL:
 
 
 class LOG:
-    version     = "1.3.7"
+    version     = "1.3.8"
     author      = "PsychicPenguin"
     release     = "2023-06-11"
-    path        = ""
-    file        = "default.log"
+    path        = "/var/log/"
+    file        = f"{sys.argv[0]}log"
     writeToFile = True
     queuesize   = 16
     queue       = []
@@ -126,6 +126,9 @@ def Log(lvl,txt,stdout_only=False):
     if lvl == LVL.WARN: input("Press any key to continue ...")
     if lvl == LVL.FAIL: WriteLogsToDisk() ; exit(1)
 
+if sys.platform == "linux":
+    Log(LVL.WARN, "You are using Windows, logging to file might cause issues")
+    LOG.path = ""
 
 if __name__ == "__main__":
     LOG.writeToFile = False
