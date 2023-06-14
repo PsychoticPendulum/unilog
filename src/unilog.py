@@ -126,7 +126,7 @@ def Log(lvl,txt,stdout_only=False):
     if lvl == LVL.WARN: input("Press any key to continue ...")
     if lvl == LVL.FAIL: WriteLogsToDisk() ; exit(1)
 
-if sys.platform == "linux":
+if sys.platform == "win32":
     Log(LVL.WARN, "You are using Windows, logging to file might cause issues")
     LOG.path = ""
 
