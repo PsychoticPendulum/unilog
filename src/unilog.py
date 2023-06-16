@@ -26,7 +26,7 @@ class LVL:
 
 
 class LOG:
-    version     = "1.3.8"
+    version     = "1.3.9"
     author      = "PsychicPenguin"
     release     = "2023-06-11"
     path        = "/var/log/"
