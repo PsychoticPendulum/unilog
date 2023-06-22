@@ -26,11 +26,11 @@ class LVL:
 
 
 class LOG:
-    version     = "1.3.9"
+    version     = "1.3.10"
     author      = "PsychicPenguin"
     release     = "2023-06-11"
     path        = "/var/log/"
-    file        = f"{sys.argv[0]}log"
+    file        = f"{sys.argv[0]}.log"
     writeToFile = True
     queuesize   = 16
     queue       = []
@@ -41,7 +41,7 @@ class LOG:
 #   +---------------+
 
 def WriteToScreen(msg):
-    print(msg)
+    print(f"{msg}{UTIL.RESET}")
 
 
 def AppendToLogs(msg,lvl):
@@ -112,7 +112,7 @@ def ReadLogFile(file,ignoreInfo=True,ignoreWarn=True,ignoreFail=False):
 
 
 def Log(lvl,txt,stdout_only=False):
-    print(UTIL.CLEARLINE, end="")
+    print(f"{UTIL.CLEARLINE}{UTIL.RESET}", end="")
     
     if   lvl == LVL.INFO:   msg = f"{FG.GREEN}{UTIL.BOLD}{UTIL.REVERSE}[ OK ]{UTIL.RESET}\t{txt}"
     elif lvl == LVL.WARN:   msg = f"{FG.YELLOW}{UTIL.BOLD}{UTIL.REVERSE}[WARN]{UTIL.RESET}\t{txt}"
