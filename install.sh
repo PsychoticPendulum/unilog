@@ -1,3 +1,16 @@
 #! /usr/bin/bash
 
-sudo cp -v src/* /usr/lib/python3.11/site-packages
+python_version=$(python3 --version | awk '{print $2}' | grep -Eo '^[0-9]+\.[0-9]+')
+python_directory="/usr/lib/python$python_version"
+
+if [[ -z $python_version ]]; then
+	echo "No supported version of python found"
+	exit
+fi
+
+if [[ ! -d $python_directory ]]; then
+	echo "Python lib directory cannot be found"
+	exit
+fi
+
+sudo cp src/* $python_directory
