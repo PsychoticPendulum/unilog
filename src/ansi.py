@@ -28,6 +28,7 @@ class UTIL:
     BOLD            = "\u001b[1m"
     ITALICS         = "\u001b[3m"
     UNDERLINE       = "\u001b[4m"
+    STRIKETHROUGH   = "\u001b[9m"
     REVERSE         = "\u001b[7m"
     
     CLEAR           = "\u001b[2J"
