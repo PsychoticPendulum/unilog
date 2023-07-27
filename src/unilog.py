@@ -31,7 +31,7 @@ class LOG:
     release     = "2023-06-11"
     path        = "/var/log/"
     file        = f"{sys.argv[0]}.log"
-    writeToFile = True
+    writeToFile = False
     queuesize   = 16
     queue       = []
 
